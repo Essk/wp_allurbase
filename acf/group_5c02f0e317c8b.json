@@ -7,7 +7,7 @@
             "label": "Release Date",
             "name": "release_date",
             "type": "date_picker",
-            "instructions": "",
+            "instructions": "If no date is entered the page will show \"Due date: TBC\". Future dates will also appear as \"Due Date\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,8 +16,37 @@
                 "id": ""
             },
             "display_format": "d\/m\/Y",
-            "return_format": "d\/m\/Y",
+            "return_format": "Ymd",
             "first_day": 1
+        },
+        {
+            "key": "field_5c03b3b6a03e3",
+            "label": "Due Date Specificity",
+            "name": "due_date_specificity",
+            "type": "select",
+            "instructions": "If the release date entered is in the future, a \"Due date\" will be displayed on the page. Here you can set how specific that date is. \"Date Entered\" will display the full date as entered. \"Month\/Year\" is the default but you can also choose \"Quarter\/Year\" or \"Year\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "date": "Date Entered",
+                "month": "Month\/Year",
+                "quarter": "Quarter\/Year",
+                "year": "Year"
+            },
+            "default_value": [
+                "month"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5c02f25ad5bfd",
@@ -80,5 +109,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543697046
+    "modified": 1543875255
 }

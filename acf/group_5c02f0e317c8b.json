@@ -133,6 +133,133 @@
                     "ui": 1
                 }
             ]
+        },
+        {
+            "key": "field_5c0e7e714ed81",
+            "label": "Release Specifications",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c0e7e834ed82",
+            "label": "Memory",
+            "name": "memory",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1024": "1024",
+                "2048": "2048"
+            },
+            "default_value": [
+                1024
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c0e7eb74ed83",
+            "label": "Wifi",
+            "name": "wifi",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c0e7ecd4ed84",
+            "label": "Real Time Clock (RTC)",
+            "name": "rtc",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c0e7eee4ed85",
+            "label": "Mouse",
+            "name": "mouse",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c0e7f014ed86",
+            "label": "Joystick",
+            "name": "joystick",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "kemp_1": "Kempston 1 button",
+                "kemp_2": "Kempston 2 button",
+                "mega": "Megadrive"
+            },
+            "allow_custom": 0,
+            "default_value": [
+                "kemp_1"
+            ],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
         }
     ],
     "location": [
@@ -152,5 +279,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543959277
+    "modified": 1544453992
 }

@@ -20,10 +20,10 @@ add_filter('acf/settings/load_json', function($paths) {
     return $paths;
 });
 
-
 // make ACF metadata appear in the cpts
-function my_rest_prepare_post($data, $post, $request) {
-	$_data = $data->data;
+function aub_add_acf_meta_to_post($data, $post, $request){
+  //error_log(print_r($post), true);
+  $_data = $data->data;
   $fields = get_fields($post->ID);
   if($fields){
     foreach ($fields as $key => $value){
@@ -31,14 +31,70 @@ function my_rest_prepare_post($data, $post, $request) {
     }
     $data->data = $_data;
   }
-
-
 	return $data;
-  }
-  add_filter("rest_prepare_release", 'my_rest_prepare_post', 10, 3);
-  add_filter("rest_prepare_studio", 'my_rest_prepare_post', 10, 3);
-  add_filter("rest_prepare_series", 'my_rest_prepare_post', 10, 3);
-  add_filter("rest_prepare_author", 'my_rest_prepare_post', 10, 3);
+}
+
+/**
+ * strip the returned object right back to just what we need.
+ */
+function aub_rest_prepare_release($data, $post, $request){
+  $_data = [];
+  $_data['id'] = $post->ID;
+  $_data['title'] = $post->post_title;
+  $_data['description'] = $post->post_content;
+  //...add more as needed
+
+  $data->data = $_data;
+
+  $data = aub_add_acf_meta_to_post($data, $post, $request);
+
+  return $data;
+}
+function aub_rest_prepare_author($data, $post, $request){
+  $_data = [];
+  $_data['id'] = $post->ID;
+  $_data['title'] = $post->post_title;
+  $_data['description'] = $post->post_content;
+  //...add more as needed
+
+  $data->data = $_data;
+
+  $data = aub_add_acf_meta_to_post($data, $post, $request);
+
+  return $data;
+}
+function aub_rest_prepare_studio($data, $post, $request){
+  $_data = [];
+  $_data['id'] = $post->ID;
+  $_data['title'] = $post->post_title;
+  $_data['description'] = $post->post_content;
+  //...add more as needed
+
+  $data->data = $_data;
+
+  $data = aub_add_acf_meta_to_post($data, $post, $request);
+
+  return $data;
+}
+function aub_rest_prepare_series($data, $post, $request){
+  $_data = [];
+  $_data['id'] = $post->ID;
+  $_data['title'] = $post->post_title;
+  $_data['description'] = $post->post_content;
+  //...add more as needed
+
+  $data->data = $_data;
+
+  $data = aub_add_acf_meta_to_post($data, $post, $request);
+
+  return $data;
+}
+
+add_filter("rest_prepare_release", 'aub_rest_prepare_release', 10, 3);
+add_filter("rest_prepare_author", 'aub_rest_prepare_release', 10, 3);
+add_filter("rest_prepare_studio", 'aub_rest_prepare_studio', 10, 3);
+add_filter("rest_prepare_series", 'aub_rest_prepare_series', 10, 3);
+
 
 // add an ACF options page for the plugin
 if( function_exists('acf_add_options_page') ) {

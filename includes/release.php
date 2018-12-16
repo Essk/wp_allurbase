@@ -37,7 +37,7 @@ function aub_create_release() {
 		'feeds'                 => true,
 	);
 	$args = array(
-		'label'                 => __( 'Release', 'allurbase' ),
+		'label'                 => __( 'release', 'allurbase' ),
 		'description'           => __( 'A software release', 'allurbase' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor' ),

@@ -18,11 +18,12 @@
 /**
 * @param WP_REST_Request $request
 * @param String  $post_type
-*  ß
+*  
 */
  function aub_all_posts_with_type($post_type, $request){
     $posts_per_page = $request['per_page'];
     $page = $request['page'];
+    $order = $request['order'];
     $args = array(
         'post_type'         => $post_type,
         'posts_per_page'    => $posts_per_page,
@@ -88,6 +89,8 @@
   * ROUTES & CALLBACKS
   */
 add_action( 'rest_api_init', 'aub_register_route' );
+
+/* config */
 function aub_register_route() {
     register_rest_route( 
         'aub/v1/', 
@@ -97,7 +100,7 @@ function aub_register_route() {
             'callback' => 'aub_config',
         )
     );
-    /* config */
+    /* all releases */
     register_rest_route( 
         'aub/v1/', 
         'releases', 
@@ -111,6 +114,9 @@ function aub_register_route() {
                 'page' => array (
                     'default' => 1
                 ),
+                'order' => array(
+                    'default' => 'title'
+                )
             )
         )
     );
@@ -144,6 +150,9 @@ function aub_register_route() {
                 'page' => array (
                     'default' => 1
                 ),
+                'order' => array(
+                    'default' => 'title'
+                )
             )
         )
     );
@@ -177,6 +186,9 @@ function aub_register_route() {
                 'page' => array (
                     'default' => 1
                 ),
+                'order' => array(
+                    'default' => 'title'
+                )
             )
         )
     );

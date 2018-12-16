@@ -23,13 +23,14 @@
  function aub_all_posts_with_type($post_type, $request){
     $posts_per_page = $request['per_page'];
     $page = $request['page'];
+    $orderby = $request['orderby'];
     $order = $request['order'];
     $args = array(
         'post_type'         => $post_type,
         'posts_per_page'    => $posts_per_page,
         'paged'             => $page,
-        'orderby'           => 'date',
-        'order'             => 'desc',
+        'orderby'           => $orderby,
+        'order'             => $order,
     );
 
     $query = new WP_Query( $args ); 
@@ -114,8 +115,11 @@ function aub_register_route() {
                 'page' => array (
                     'default' => 1
                 ),
-                'order' => array(
+                'orderby' => array(
                     'default' => 'title'
+                ),
+                'order' => array(
+                    'default' => 'asc'
                 )
             )
         )
@@ -150,8 +154,11 @@ function aub_register_route() {
                 'page' => array (
                     'default' => 1
                 ),
-                'order' => array(
+                'orderby' => array(
                     'default' => 'title'
+                ),
+                'order' => array(
+                    'default' => 'asc'
                 )
             )
         )
@@ -186,8 +193,11 @@ function aub_register_route() {
                 'page' => array (
                     'default' => 1
                 ),
-                'order' => array(
+                'orderby' => array(
                     'default' => 'title'
+                ),
+                'order' => array(
+                    'default' => 'asc'
                 )
             )
         )

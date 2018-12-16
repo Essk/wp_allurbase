@@ -3,11 +3,11 @@
     "title": "Releases",
     "fields": [
         {
-            "key": "field_5c02f0eed4dc3",
-            "label": "Release Date",
-            "name": "release_date",
-            "type": "date_picker",
-            "instructions": "If no date is entered the page will show \"Due date: TBC\". Future dates will also appear as \"Due Date\"",
+            "key": "field_5c165cb6e6973",
+            "label": "General Information",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,38 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "d\/m\/Y",
-            "return_format": "Ymd",
-            "first_day": 1
-        },
-        {
-            "key": "field_5c03b3b6a03e3",
-            "label": "Due Date Specificity",
-            "name": "due_date_specificity",
-            "type": "select",
-            "instructions": "If the release date entered is in the future, a \"Due date\" will be displayed on the page. Here you can set how specific that date is. \"Date Entered\" will display the full date as entered. \"Month\/Year\" is the default but you can also choose \"Quarter\/Year\" or \"Year\"",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "date": "Date Entered",
-                "month": "Month\/Year",
-                "quarter": "Quarter\/Year",
-                "year": "Year"
-            },
-            "default_value": [
-                "month"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5c02f25ad5bfd",
@@ -133,6 +103,164 @@
                     "ui": 1
                 }
             ]
+        },
+        {
+            "key": "field_5c166b34c67f6",
+            "label": "Release Link",
+            "name": "release_link",
+            "type": "url",
+            "instructions": "Link for digital downloads or a shop for shipping physical media. Where should a visitor go next if they want to get this release?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c166a6dc67f5",
+            "label": "Release Format",
+            "name": "release_format",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "physical": "Physical",
+                "digital": "Digital Download",
+                "zine": "Ezine \/ Magazine",
+                "other": "Other (please specify)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5c166bcec67f7",
+            "label": "Release Other",
+            "name": "release_other",
+            "type": "text",
+            "instructions": "Please provide more information",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c166a6dc67f5",
+                        "operator": "==",
+                        "value": "other"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c165c7fc5b40",
+            "label": "Status",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c165cede6974",
+            "label": "Status",
+            "name": "status",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "planned": "Planned",
+                "coming": "Coming",
+                "released": "Released",
+                "abandoned": "Abandoned"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c02f0eed4dc3",
+            "label": "Release Date",
+            "name": "release_date",
+            "type": "date_picker",
+            "instructions": "If no date is entered the page will show \"Due date: TBC\". Future dates will also appear as \"Due Date\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_5c03b3b6a03e3",
+            "label": "Due Date Specificity",
+            "name": "due_date_specificity",
+            "type": "select",
+            "instructions": "If the release date entered is in the future, a \"Due date\" will be displayed on the page. Here you can set how specific that date is. \"Date Entered\" will display the full date as entered. \"Month\/Year\" is the default but you can also choose \"Quarter\/Year\" or \"Year\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "date": "Date Entered",
+                "month": "Month\/Year",
+                "quarter": "Quarter\/Year",
+                "year": "Year"
+            },
+            "default_value": [
+                "month"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5c0e7e714ed81",
@@ -235,10 +363,10 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5c0e7f014ed86",
-            "label": "Joystick",
-            "name": "joystick",
-            "type": "checkbox",
+            "key": "field_5c166106a3b61",
+            "label": "Joystick Requirement",
+            "name": "joystick_requirement",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -248,16 +376,49 @@
                 "id": ""
             },
             "choices": {
-                "kemp_1": "Kempston 1 button",
-                "kemp_2": "Kempston 2 button",
-                "mega": "Megadrive"
+                "none": "No joystick support",
+                "required": "Required",
+                "optional": "Optional"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c0e7f014ed86",
+            "label": "Joystick Support",
+            "name": "joystick",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c166106a3b61",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one_button": "One button (Kempston) support",
+                "two_button :Two button (Master System) support": "two_button :Two button (Master System) support",
+                "four_button": "Four button (Megadrive) support"
             },
             "allow_custom": 0,
             "default_value": [
-                "kemp_1"
+                "one_button"
             ],
             "layout": "vertical",
-            "toggle": 0,
+            "toggle": 1,
             "return_format": "value",
             "save_custom": 0
         }
@@ -279,5 +440,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1544453992
+    "modified": 1544973715
 }

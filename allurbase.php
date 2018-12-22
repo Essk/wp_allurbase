@@ -26,8 +26,9 @@ function aub_add_acf_meta_to_post($data, $post, $request){
   $_data = $data->data;
   $fields = get_fields($post->ID);
   if($fields){
+    $_data['meta'] = array();
     foreach ($fields as $key => $value){
-      $_data[$key] = get_field($key, $post->ID);
+      $_data['meta'][$key] = get_field($key, $post->ID);
     }
     $data->data = $_data;
   }

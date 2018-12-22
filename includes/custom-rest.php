@@ -52,6 +52,7 @@
    
     $response = new WP_REST_Response($data, 200);
     $response = aub_pagination_headers($query, $response);
+   // $response->data['request'] = $request['badger'];
     return $response;
  }
 

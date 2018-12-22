@@ -410,7 +410,7 @@
             },
             "choices": {
                 "one_button": "One button (Kempston) support",
-                "two_button :Two button (Master System) support": "two_button :Two button (Master System) support",
+                "two_button": "Two button (Master System) support",
                 "four_button": "Four button (Megadrive) support"
             },
             "allow_custom": 0,
@@ -419,7 +419,7 @@
             ],
             "layout": "vertical",
             "toggle": 1,
-            "return_format": "value",
+            "return_format": "array",
             "save_custom": 0
         }
     ],
@@ -440,5 +440,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1544973715
+    "modified": 1545514660
 }

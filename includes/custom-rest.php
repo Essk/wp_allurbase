@@ -265,8 +265,7 @@ function aub_series_with_id(WP_REST_Request $request){
  }
 function aub_all_releases(WP_REST_Request $request){
     $response = aub_all_posts_with_type('release', $request);
-    return rest_ensure_response($request['rtc']);
-   // return rest_ensure_response($response);
+    return rest_ensure_response($response);
 }
 function aub_release_with_id(WP_REST_Request $request){
    $response = aub_post_with_id('release', $request['id']);
